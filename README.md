@@ -11,29 +11,39 @@ Framework de automatización de pruebas para la API pública de [FreeToGame](htt
 ## 📁 Estructura
 gaming-api-tests/
 ├── tests/
-│   └── test_games_list.py
+│   ├── test_games_list.py
+│   └── test_game_detail.py
 ├── conftest.py
 ├── requirements.txt
 └── README.md
+
 ## 🚀 Cómo ejecutar
 
-```bash
 # Instalar dependencias
 pip install -r requirements.txt
 
-# Correr los tests
+# Correr todos los tests
 pytest tests/ -v
 
 # Generar reporte HTML
 pytest tests/ -v --html=reports/reporte.html --self-contained-html
-```
 
-## ✅ Tests actuales
+## ✅ Tests — ¿Qué verifica cada uno?
 
-| Test | Descripción |
-|---|---|
-| `test_status_code_es_200` | La API responde con HTTP 200 |
-| `test_respuesta_es_una_lista` | La respuesta es una lista válida |
-| `test_lista_no_esta_vacia` | La lista contiene juegos |
-| `test_juego_tiene_campos_requeridos` | Cada juego tiene id, title, genre, platform, thumbnail |
-| `test_filtrar_por_genero_mmorpg` | El filtro por categoría funciona correctamente |
+### 📋 test_games_list.py — Catálogo general `/api/games`
+| Test | Pregunta que responde | Por qué importa |
+|---|---|---|
+| `test_status_code_es_200` | ¿La API está viva y responde? | Si no es 200, el servidor está caído o roto |
+| `test_respuesta_es_una_lista` | ¿Los datos tienen el formato correcto? | Podría responder 200 pero devolver basura |
+| `test_lista_no_esta_vacia` | ¿Hay datos reales? | Una lista vacía rompe cualquier app que dependa de esto |
+| `test_juego_tiene_campos_requeridos` | ¿Cada juego tiene lo mínimo necesario? | Si falta `thumbnail`, la app muestra imágenes rotas |
+| `test_filtrar_por_genero_mmorpg` | ¿Los filtros funcionan? | Un filtro roto muestra resultados incorrectos al usuario |
+
+### 🔍 test_game_detail.py — Detalle de juego `/api/game?id=`
+| Test | Pregunta que responde | Por qué importa |
+|---|---|---|
+| `test_detalle_status_200` | ¿El endpoint de detalle responde? | Endpoint diferente, puede fallar independiente |
+| `test_detalle_campos_completos` | ¿El juego tiene descripción, desarrollador, etc.? | La vista de detalle necesita más datos que el listado |
+| `test_thumbnail_es_url_valida` | ¿La imagen tiene una URL real? | Una URL rota = imagen rota en producción |
+| `test_id_inexistente_retorna_error` | ¿Qué pasa con datos inválidos? | La API debe manejar errores, no explotar |
+| `test_año_lanzamiento_valido` | ¿El año tiene sentido? | Un juego no puede lanzarse en 1800 |
