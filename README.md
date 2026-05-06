@@ -9,6 +9,7 @@ Framework de automatización de pruebas para la API pública de [FreeToGame](htt
 - pytest-html
 
 ## 📁 Estructura
+```
 gaming-api-tests/
 ├── tests/
 │   ├── test_games_list.py
@@ -16,7 +17,7 @@ gaming-api-tests/
 ├── conftest.py
 ├── requirements.txt
 └── README.md
-
+```
 ## 🚀 Cómo ejecutar
 
 # Instalar dependencias
