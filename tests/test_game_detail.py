@@ -1,3 +1,5 @@
+
+import pytest
 import requests
 
 BASE_URL = "https://www.freetogame.com/api"
@@ -78,6 +80,7 @@ class TestGameDetail:
             "❌ La API no maneja correctamente los IDs inexistentes"
 
     # 🔴 TEST QUE FALLA A PROPÓSITO — simula un bug detectado
+    @pytest.mark.xfail(reason="BUG SIMULADO: título no coincide exactamente")
     def test_titulo_es_exactamente_valorant(self):
         """
         [BUG SIMULADO] Verificamos que el título sea exactamente 'Call of Duty'
