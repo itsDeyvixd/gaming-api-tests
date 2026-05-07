@@ -52,8 +52,11 @@ pytest tests/ -v --html=reports/reporte.html --self-contained-html
 
 ## 📸 Evidencia de ejecución
 
+### Reporte HTML
 <img width="1906" height="891" alt="Captura de pantalla 2026-05-07 172624" src="https://github.com/user-attachments/assets/681e5403-ee2a-4390-8159-5770589ffdbe" />
 
+### Terminal — 24 passed, 1 xfailed
 <img width="1565" height="633" alt="Captura de pantalla 2026-05-07 172537" src="https://github.com/user-attachments/assets/420006e0-cdc1-4396-936c-0baf63c2a253" />
 
+### GitHub Actions — CI/CD
 <img width="1878" height="837" alt="image" src="https://github.com/user-attachments/assets/0e932503-a946-4a76-902c-127c9fe360fc" />
