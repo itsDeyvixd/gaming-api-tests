@@ -1,4 +1,5 @@
 # 🎮 Gaming API Tests
+![Gaming API Tests](https://github.com/itsDeyvixd/gaming-api-tests/actions/workflows/tests.yml/badge.svg)
 
 Framework de automatización de pruebas para la API pública de [FreeToGame](https://www.freetogame.com/api-doc).
 
@@ -9,6 +10,7 @@ Framework de automatización de pruebas para la API pública de [FreeToGame](htt
 - pytest-html
 
 ## 📁 Estructura
+```
 gaming-api-tests/
 ├── tests/
 │   ├── test_games_list.py
