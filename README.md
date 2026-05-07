@@ -8,7 +8,7 @@ Framework de automatización de pruebas para la API pública de [FreeToGame](htt
 - requests
 - pytest-html
 
-# 🎮 Gaming API Tests
+# Gaming API Tests (Github)
 
 ![Gaming API Tests](https://github.com/itsDeyvixd/gaming-api-tests/actions/workflows/tests.yml/badge.svg)
 
