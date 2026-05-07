@@ -1,4 +1,4 @@
-name: 🎮 Gaming API Tests
+name: Gaming API Tests
 
 on:
   push:
@@ -9,24 +9,24 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: 📥 Checkout código
-        uses: actions/checkout@v3
+      - name: Checkout codigo
+        uses: actions/checkout@v4
 
-      - name: 🐍 Configurar Python
-        uses: actions/setup-python@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      - name: 📦 Instalar dependencias
+      - name: Instalar dependencias
         run: pip install -r requirements.txt
 
-      - name: 🧪 Correr tests
+      - name: Correr tests
         run: pytest tests/ -v --html=reports/reporte.html --self-contained-html
 
-      - name: 📊 Subir reporte como artefacto
-        uses: actions/upload-artifact@v3
+      - name: Subir reporte como artefacto
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: reporte-html
